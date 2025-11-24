@@ -1,0 +1,637 @@
+:root {
+    /* Cores exatas da referência (Atualizadas) */
+    --bg-dark: #050505;
+    --texto-branco: #ffffff;
+    --texto-preto: #333333;
+    --texto-cinza: #555555;
+    
+    /* Cores Neon dos Botões e Highlights */
+    --roxo-btn: #0011ff; 
+    --verde-btn: #00914b; 
+    --amarelo-btn: #ffdd00;
+    --azul-btn: #0051ff;
+    
+    /* Cores de Ícones dos cards iniciais */
+    --verde-icon: #76c043;
+    --marrom-icon: #a0522d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: var(--texto-preto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+p {
+    text-align: justify;
+}
+
+/* === HEADER & HERO === */
+#main-header {
+    background-color: var(--bg-dark);
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('./assets/FUNDO_CIMA.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    color: var(--texto-branco);
+    padding-top: 40px;
+    padding-bottom: 100px;
+    text-align: center;
+    position: relative;
+}
+
+/* Logo */
+.top-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.top-logo i {
+    font-size: 2.5rem;
+    color: var(--verde-icon);
+}
+.logo-text h1 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    color: white;
+}
+.logo-text span {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.header-line {
+    width: 60%;
+    height: 1px;
+    background-color: #444;
+    margin: 0 auto 20px auto;
+}
+
+/* Botões Coloridos */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.nav-btn:active { transform: translateY(2px); box-shadow: none; }
+
+/* Cores dos botões do Header e da seção de Materiais */
+.btn-roxo { background-color: var(--roxo-btn); }
+.btn-verde { background-color: var(--verde-btn); }
+.btn-amarelo { background-color: var(--amarelo-btn); color: var(--texto-preto); }
+
+/* Texto Principal (Hero) */
+.hero-text-container {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 40px;
+}
+
+.hero-text-container span.light {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* === CARDS SOBREPOSTOS === */
+#intro-cards {
+    position: relative;
+    margin-top: -60px; 
+    z-index: 10;
+    padding: 0 15px;
+    margin-bottom: 3rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#intro-cards .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-white {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.color-green { color: var(--verde-icon); }
+.color-brown { color: var(--marrom-icon); }
+
+.card-white h3 {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+.card-white p {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* === ESTILOS GERAIS DE CONTEÚDO === */
+.content-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.text-center { text-align: center; }
+
+/* Títulos com Sublinhado Colorido (A base para todos os H2 de seção) */
+.title-highlight {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #222;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+
+/* Modificador para títulos maiores e centralizados */
+.section-title-large {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Cria o sublinhado colorido */
+.title-highlight::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12px;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5;
+    border-radius: 4px;
+}
+
+/* Define a cor do sublinhado para cada variação */
+.title-highlight.amarelo::after { background-color: #ffcc00 } /* Corrigido para amarelo */
+.title-highlight.verde::after { background-color: var(--verde-btn); }
+.title-highlight.azul::after { background-color: var(--azul-btn); }
+.title-highlight.roxo::after { background-color: var(--roxo-btn) }
+
+/* Estilo específico para o H2 do cabeçalho (Hero) */
+.hero-text-container h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.highlight-thin { font-size: 1.5rem; }
+.highlight-thin::after { height: 4px; bottom: -2px; opacity: 1; }
+
+.body-text {
+    font-size: 1rem;
+    color: var(--texto-cinza);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+.lead-text {
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.divider-center {
+    width: 990px;
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+    margin: 30px auto;
+}
+
+/* === ÁREA DO VÍDEO === */
+.video-container {
+    margin: 3rem auto;
+    max-width: 800px;
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid var(--verde-btn);
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* === IMAGEM DE CONTEÚDO RESPONSIVA === */
+.responsive-image {
+    display: block; /* Essencial para aplicar margens automáticas */
+    max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 2rem auto; /* Centraliza horizontalmente e adiciona espaço vertical */
+    border-radius: 30px; /* Arredonda as bordas como solicitado */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave para destacar */
+}
+
+
+.video-placeholder {
+    width: 100%;
+    height: 220px;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 3px solid var(--verde-btn);
+}
+
+.video-caption {
+    padding: 20px 25px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.4;
+    position: relative;
+    margin-top: 10px; /* Ajustei para sobrepor levemente se não houver margem top grande */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 20px rgba(0,191,165, 0.3);
+}
+.verde-bg { background-color: var(--verde-btn); }
+
+/* === LISTAS DE BENEFÍCIOS === */
+.benefits-group {
+    margin-bottom: 3rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefits-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--texto-preto);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    flex-wrap: wrap; /* Permite que o conteúdo expansível vá para a próxima linha */
+}
+
+.benefits-list li i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.verde-list li {
+    background-color: rgba(0, 191, 165, 0.15);
+    border-left: 4px solid var(--verde-btn);
+}
+.verde-list li i { color: var(--verde-btn); }
+
+.roxo-list li {
+    background-color: rgba(123, 97, 255, 0.15);
+    border-left: 4px solid var(--roxo-btn);
+}
+.roxo-list li i { color: var(--roxo-btn); }
+
+.azul-list li {
+    background-color: rgba(0, 68, 255, 0.1);
+    border-left: 4px solid var(--azul-btn);
+}
+.azul-list li i { color: var(--azul-btn); }
+
+/* Conteúdo expansível para os benefícios */
+.benefit-expansion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding-top 0.5s ease-out;
+    width: 100%;
+    padding-top: 0;
+    margin-top: 10px; /* Espaçamento entre o título e o texto */
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.benefit-expansion.active {
+    max-height: 500px; /* Altura suficiente para o conteúdo */
+    transition: max-height 0.7s ease-in, padding-top 0.5s ease-in;
+    padding-top: 15px;
+}
+
+.benefit-expansion p {
+    font-size: 0.9rem;
+    color: var(--texto-cinza);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* === ANIMAÇÃO BÁSICA === */
+.animar { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
+.animar.visivel { opacity: 1; transform: translateY(0); }
+
+/* === SEÇÃO MATERIAIS DARK === */
+.dark-section {
+    background-color: #000000; /* Fundo cinza escuro conforme solicitado */
+    padding: 60px 0;
+    color: white;
+}
+
+.material-card {
+    background-color: transparent;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+/* TÍTULOS NEON */
+.card-header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.neon-bar {
+    width: 6px;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px currentColor;
+}
+.roxo-bar { background-color: var(--roxo-btn); box-shadow: 0 0 10px var(--roxo-btn); }
+.amarelo-bar { background-color: var(--amarelo-btn); box-shadow: 0 0 10px var(--amarelo-btn); }
+.verde-bar { background-color: var(--verde-btn); box-shadow: 0 0 10px var(--verde-btn); }
+
+.title-content { display: flex; flex-direction: column; }
+
+.neon-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1;
+}
+
+.roxo-text { color: #6a4cff; text-shadow: 0 0 5px rgba(106, 76, 255, 0.5); }
+.amarelo-text { color: #ffcc00; text-shadow: 0 0 5px rgba(255, 204, 0, 0.5); }
+.verde-text { color: #009444; text-shadow: 0 0 5px rgba(0, 148, 68, 0.5); }
+
+.subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* CORPO DO CARD */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* IMAGEM PRINCIPAL */
+.card-main-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.card-main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* LISTA DE CHECAGEM */
+.check-list {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+.check-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.4;
+}
+
+/* CORREÇÃO: Palavras em negrito pegam a cor do tema */
+.check-list li strong { font-weight: 700; }
+.roxo-check li strong { color: var(--roxo-btn); }
+.amarelo-check li strong { color: var(--amarelo-btn); }
+.verde-check li strong { color: var(--verde-btn); }
+
+/* Marcadores coloridos */
+.check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.roxo-check li::before { color: var(--roxo-btn); }
+.amarelo-check li::before { color: var(--amarelo-btn); }
+.verde-check li::before { color: var(--verde-btn); }
+
+/* BOTÃO SAIBA MAIS */
+.btn-saber-mais {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: white;
+    transition: transform 0.2s, filter 0.2s;
+    float: right;
+    margin-top: 10px;
+}
+.btn-saber-mais:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* ÁREA DE EXPANSÃO (ANIMAÇÃO) */
+.card-expansion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin-top: 20px;
+    clear: both;
+}
+
+.card-expansion.active {
+    max-height: 1000px;
+    transition: max-height 0.8s ease-in;
+}
+
+.expansion-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.expansion-content .text-block {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+    text-align: justify;
+}
+.expansion-content strong { color: white; }
+
+.extra-images {
+    display: flex; /* Mantém o flexbox para alinhamento fácil */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Aumenta o espaçamento vertical entre as imagens */
+}
+.extra-images img {
+    width: 100%; /* Faz a imagem ocupar a largura disponível */
+    max-width: 300px; /* Limita a largura máxima para não ficar muito grande */
+    height: auto; /* Mantém a proporção correta da imagem */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Exceção para a imagem que deve ser exibida por completo */
+@media (min-width: 768px) {
+    /* Header e Cards Intro */
+    #intro-cards .container {
+        flex-direction: row;
+        margin-top: -80px;
+    }
+    .body-text { text-align: left; }
+
+    /* Ajuste para a seção Dark ficar lado a lado */
+    .card-body {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .card-main-image { flex: 1; }
+    .card-summary { flex: 1; }
+
+    /* Ajuste do H2 do cabeçalho para telas maiores (Desktop) */
+    .hero-text-container h2 {
+        font-size: 2.5rem;
+        text-align: left;
+        padding-left: 5%;
+    }
+
+    /* SOBRESCREVE os estilos para DESKTOP (lado a lado) */
+    .extra-images {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .extra-images img {
+        object-fit: cover; /* Aplica o corte apenas no desktop */
+        width: auto; /* Largura automática baseada na altura */
+        height: 200px; /* Altura fixa para criar uma galeria uniforme */
+    }
+}
+
+.nav-btn.dedicatoria-title {
+    /* Garante que o texto do botão "Dedicatória" seja branco */
+    color: var(--texto-branco) !important;
+}   
+.extra-images img.full-view {
+    /* Garante que a imagem inteira seja visível, sem cortes */
+    object-fit: contain; 
+    background-color: #1a1a1a; /* Fundo escuro para preencher o espaço vazio */
+}
+
+/* Ajuste de cor para os títulos de benefícios */
+.title-highlight.verde.highlight-thin {
+    color: var(--verde-btn);
+}
+.title-highlight.azul.highlight-thin {
+    color: var(--azul-btn);
+}
+
+/* === ESTILOS ISOLADOS PARA TÍTULOS H2 === */
+/* Garante que todos os H2 de seção tenham texto preto, mas mantenham o sublinhado colorido. */
+
+/* Título H2: Sobre Nós */
+.sobre-nos-title { color: #222 !important; }
+/* Título H2: Objetivos */
+.objetivos-title { color: #222 !important; }
+/* Título H2: Dedicatória */
+.dedicatoria-title { color: #222 !important; }
+/* Título H2: Construção Civil */
+.construcao-title { color: #222 !important; }
+/* Título H2: Economia Circular */
+.economia-title { color: #222 !important; }
+/* Título H2: Benefícios */
+.beneficios-title { color: #222 !important; }
